@@ -39,6 +39,8 @@ void KeyUp(unsigned char key, int, int)
     }
 }
 
+// hanya ganti a dan d
+
 void MouseMotion(int x, int y)
 {
     if (g_mouseWarping) { g_mouseWarping = false; return; }

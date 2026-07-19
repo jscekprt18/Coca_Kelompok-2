@@ -23,8 +23,8 @@ void KeyDown(unsigned char key, int, int)
     switch (key) {
         case 'w': case 'W': g_wDown = true; break;
         case 's': case 'S': g_sDown = true; break;
-        case 'a': case 'A': g_aDown = true; break;
-        case 'd': case 'D': g_dDown = true; break;
+        case 'd': case 'D': g_aDown = true; break;
+        case 'a': case 'A': g_dDown = true; break;
         case 27: exit(0); // ESC keluar
     }
 }
@@ -34,8 +34,8 @@ void KeyUp(unsigned char key, int, int)
     switch (key) {
         case 'w': case 'W': g_wDown = false; break;
         case 's': case 'S': g_sDown = false; break;
-        case 'a': case 'A': g_aDown = false; break;
-        case 'd': case 'D': g_dDown = false; break;
+        case 'd': case 'D': g_aDown = false; break;
+        case 'a': case 'A': g_dDown = false; break;
     }
 }
 

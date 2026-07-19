@@ -23,6 +23,9 @@ enum MaterialID {
     MAT_SOFA_ORANGE,   // bantal/sofa oranye seperti area duduk indoor asli
     MAT_ACCENT_MAROON, // panel dinding/plafon merah marun (aksen)
     MAT_SIGN_METAL,    // huruf logo "COCA" metal keperakan
+    MAT_ROAD,          // aspal jalan depan
+    MAT_HOUSE_WALL_A,  // dinding rumah tetangga - terracotta hangat
+    MAT_HOUSE_WALL_B,  // dinding rumah tetangga - krem pucat
 };
 
 void ApplyMaterial(MaterialID id);

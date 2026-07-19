@@ -2,6 +2,7 @@
 #include <windows.h>
 #endif
 
+#include "building.h"
 #include "camera.h"
 #include "input.h"
 #include "lighting.h"
@@ -25,7 +26,10 @@ static int g_lastTimeMs = 0;
 // ======================================================
 void Display()
 {
-    glClearColor(0.55f, 0.70f, 0.85f, 1.0f); // langit sore
+    if (IsDayTime())
+        glClearColor(0.55f, 0.70f, 0.85f, 1.0f); // langit siang
+    else
+        glClearColor(0.03f, 0.04f, 0.10f, 1.0f); // langit malam
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glMatrixMode(GL_MODELVIEW);
@@ -33,12 +37,12 @@ void Display()
 
     ApplyCamera();
 
-    // lampu interior (LIGHT1) diposisikan relatif world, di atas meja
-    // utama dekat skylight
-    GLfloat lampPos[4] = {0.0f, 2.6f, 0.8f, 1.0f};
-    glLightfv(GL_LIGHT1, GL_POSITION, lampPos);
+    // lampu interior (LIGHT1/LIGHT2) diposisikan relatif world tiap frame,
+    // supaya posisi eye-space-nya selalu ikut transform kamera terkini
+    UpdateLightPositions();
 
     DrawSceneList();
+    DrawDynamicGlows(); // bohlam lampu interior + lampu jalan (di luar display list)
 
     glutSwapBuffers();
 }
@@ -88,6 +92,9 @@ int main(int argc, char** argv)
 
     InitLighting();
     InitInput(WINDOW_WIDTH, WINDOW_HEIGHT);
+
+    cout << "Kontrol: WASD gerak, mouse arah pandang | L = lampu interior, "
+            "N = siang/malam | ESC keluar" << endl;
 
     glutDisplayFunc(Display);
     glutReshapeFunc(Reshape);

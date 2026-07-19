@@ -539,14 +539,13 @@ void BuildCOCA()
     BuildWallXWithGlassStorefront(BX1, BX2, BZ1, FLOOR_Y, WALL_H, WALL_T, MAT_WALL, 0.0f);
     BuildWallAlongX(BX1, BX2, BZ2, FLOOR_Y, WALL_H, WALL_T, MAT_WALL);
 
-    /* ---- PARTISI INTERIOR (bukaan lorong dipusatkan x=0, lihat catatan atas) ---- */
+   /* ---- PARTISI INTERIOR (bukaan lorong dipusatkan x=0, lihat catatan atas) ---- */
     const float corA = -0.5f, corB = 0.5f;
-    BuildWallAlongX(BX1, corA, zLor1a, FLOOR_Y, WALL_H, WALL_T, MAT_WALL);
-    BuildWallAlongX(corB, BX2, zLor1a, FLOOR_Y, WALL_H, WALL_T, MAT_WALL);
+
     BuildWallAlongX(BX1, corA, zMain1, FLOOR_Y, WALL_H, WALL_T, MAT_WALL);
     BuildWallAlongX(corB, BX2, zMain1, FLOOR_Y, WALL_H, WALL_T, MAT_WALL);
-    BuildWallAlongX(BX1, corA, zMain2, FLOOR_Y, WALL_H, WALL_T, MAT_WALL);
-    BuildWallAlongX(corB, BX2, zMain2, FLOOR_Y, WALL_H, WALL_T, MAT_WALL);
+
+
     BuildWallAlongX(BX1, corA, zLor2b, FLOOR_Y, WALL_H, WALL_T, MAT_WALL);
     BuildWallAlongX(corB, BX2, zLor2b, FLOOR_Y, WALL_H, WALL_T, MAT_WALL);
     BuildWallXWithDoor(BX1, BX2, zStaff1, FLOOR_Y, WALL_H, WALL_T, MAT_WALL, 0.0f);

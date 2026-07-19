@@ -102,7 +102,7 @@ void UpdateCamera(int dtMs, bool wDown, bool sDown, bool aDown, bool dDown)
     float dt = dtMs / 1000.0f;
     float sp = cam.speed * dt;
     float fx, fz; GetForwardVector(fx, fz);
-    float rx = fz, rz = -fx; // vektor kanan (right), tegak lurus forward
+    float rx = fz, rz = -fx;
 
     float dx = 0, dz = 0;
     if (wDown) { dx += fx*sp; dz += fz*sp; }

@@ -7,7 +7,7 @@ struct Camera
 {
     float x, y, z;
     float yaw, pitch;
-    float speed;      // meter/detik
+    float speed;
     float eyeHeight;
 
     Camera();

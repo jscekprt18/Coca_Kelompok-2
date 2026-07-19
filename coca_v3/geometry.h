@@ -7,12 +7,6 @@
 
 #include <GL/freeglut.h>
 
-// ======================================================
-// Primitif geometri vertex-explicit dasar. Semua fungsi "Build..." di
-// building.cpp menyusun bangunan dari primitif-primitif ini, bukan dari
-// glutSolidCube dsb, supaya tiap bagian (dinding, kusen, atap, dst) punya
-// vertex + normal + texcoord sendiri yang mudah diedit.
-// ======================================================
 
 struct Vec3 { float x, y, z; };
 
@@ -29,8 +23,7 @@ void DrawQuadV(const Vec3 &a, const Vec3 &b, const Vec3 &c, const Vec3 &d,
 void DrawTriV(const Vec3 &a, const Vec3 &b, const Vec3 &c,
               float nx, float ny, float nz);
 
-// Teks vektor 3D (stroke font GLUT - tetap berbasis garis/vertex, bukan
-// bitmap raster) untuk signage seperti tulisan "COCA" di kanopi.
+
 void DrawStrokeText(const char *text, float x, float y, float z,
                      float scale, float r, float g, float b);
 

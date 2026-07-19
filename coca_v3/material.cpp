@@ -48,6 +48,11 @@ void ApplyMaterial(MaterialID id)
         case MAT_ACCENT_MAROON:   SetMat(0.22f,0.09f,0.07f, 0.40f,0.16f,0.12f, 0.10f,0.07f,0.06f, 10.0f); break;
         // Huruf logo metal keperakan
         case MAT_SIGN_METAL:      SetMat(0.55f,0.55f,0.58f, 0.80f,0.80f,0.83f, 0.90f,0.90f,0.92f, 90.0f); break;
+        // Aspal jalan (gelap, hampir tanpa specular)
+        case MAT_ROAD:            SetMat(0.05f,0.05f,0.05f, 0.13f,0.13f,0.14f, 0.05f,0.05f,0.05f, 4.0f);  break;
+        // Rumah tetangga - variasi warna dinding biar tidak seragam
+        case MAT_HOUSE_WALL_A:    SetMat(0.35f,0.20f,0.12f, 0.68f,0.42f,0.26f, 0.08f,0.07f,0.06f, 8.0f);  break;
+        case MAT_HOUSE_WALL_B:    SetMat(0.42f,0.40f,0.30f, 0.80f,0.76f,0.58f, 0.08f,0.08f,0.06f, 8.0f);  break;
         default:                  SetMat(0.3f,0.3f,0.3f, 0.6f,0.6f,0.6f, 0.1f,0.1f,0.1f, 8.0f); break;
     }
 }

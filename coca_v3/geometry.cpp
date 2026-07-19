@@ -76,12 +76,7 @@ void DrawTriV(const Vec3 &a, const Vec3 &b, const Vec3 &c,
     glEnd();
 }
 
-// CATATAN ARAH HADAP: font stroke GLUT digambar di bidang XY dan "terbaca
-// benar" untuk penonton yang berada di sisi +Z memandang ke arah -Z.
-// Kamera tur kita start di sisi -Z (luar gerbang) memandang ke arah +Z (ke
-// arah bangunan) - artinya kita melihat sisi "belakang" tulisan itu, jadi
-// tanpa koreksi hasilnya terbalik/mirror. Makanya sumbu X lokal di-mirror
-// (scale -1) supaya terbaca benar dari sudut pandang tur kita.
+
 void DrawStrokeText(const char *text, float x, float y, float z,
                      float scale, float r, float g, float b)
 {
